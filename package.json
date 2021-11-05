@@ -1,5 +1,5 @@
 {
-  "name": "files-app",
+  "name": "file-app",
   "private": true,
   "scripts": {
     "dev": "next dev",
