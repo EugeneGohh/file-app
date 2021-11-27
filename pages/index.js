@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "../styles/Home.module.css";
-import Nav from "../src/components/Nav";
 
 export default function Home() {
   return (
@@ -12,25 +12,18 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <nav>
-        <Nav />
-      </nav>
-
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="#">File App!</a>
+          Hey, Welcome to <a>File App!</a>
         </h1>
 
         <div className={styles.grid}>
-          <a href="https://nextjs.org" className={styles.card}>
-            <h2>Library &rarr;</h2>
-            <p>Checkout all your files here.</p>
-          </a>
-
-          <a href="https://nextjs.org" className={styles.card}>
-            <h2>Support &rarr;</h2>
-            <p>Need help? Check us out!</p>
-          </a>
+          <Link href="/files">
+            <a className={styles.card}>
+              <h2>Library &rarr;</h2>
+              <p>Checkout all your files here.</p>
+            </a>
+          </Link>
         </div>
       </main>
 
@@ -49,3 +42,14 @@ export default function Home() {
     </div>
   );
 }
+
+// Mock CMS
+// export function getStaticProps() {
+//   return {
+//     props: {
+//       content: {
+//         title: "Hey, Welcome to",
+//       },
+//     },
+//   };
+// }
