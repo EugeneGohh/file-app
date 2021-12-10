@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "../styles/Home.module.css";
 
-export default function Home() {
+export default function Home({ content }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -14,7 +14,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Hey, Welcome to <a>File App!</a>
+          {content.title} <a>File App!</a>
         </h1>
 
         <div className={styles.grid}>
@@ -44,12 +44,12 @@ export default function Home() {
 }
 
 // Mock CMS
-// export function getStaticProps() {
-//   return {
-//     props: {
-//       content: {
-//         title: "Hey, Welcome to",
-//       },
-//     },
-//   };
-// }
+export function getStaticProps() {
+  return {
+    props: {
+      content: {
+        title: "Hey, Welcome to",
+      },
+    },
+  };
+}
